@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2026 Pink Canvas</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #8b0000, #ff4d6d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        canvas {
+            background: radial-gradient(circle at top, #ff9aa2, #b3001b);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.45);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="canvas" width="900" height="500"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        let textY = 180;
+        let direction = 1;
+
+        /* Bubbles */
+        const bubbles = Array.from({
+            length: 10
+        }, () => ({
+            x: Math.random() * canvas.width,
+            y: canvas.height + Math.random() * 200,
+            radius: Math.random() * 6 + 3,
+            speed: Math.random() * 0.5 + 0.3
+        }));
+
+        /* Hearts */
+        const hearts = Array.from({
+            length: 12
+        }, () => ({
+            x: Math.random() * canvas.width,
+            y: canvas.height + Math.random() * 300,
+            size: Math.random() * 14 + 10,
+            speed: Math.random() * 0.7 + 0.4,
+            drift: (Math.random() - 0.5) * 0.6
+        }));
+
+        function drawBackground() {
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, "#ff758f");
+            gradient.addColorStop(1, "#b3001b");
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function drawText() {
+            ctx.textAlign = "center";
+            ctx.shadowColor = "rgba(255, 0, 76, 0.6)";
+            ctx.shadowBlur = 15;
+
+            ctx.font = "700 34px 'Playfair Display'";
+            ctx.fillStyle = "#fff0f5";
+            ctx.fillText("Welcome to 2026 💖", canvas.width / 2, textY);
+
+            ctx.font = "300 18px 'Poppins'";
+            ctx.fillText("How Far Would You Go For Love 😉 You Are My Special!❤️", canvas.width / 2, textY + 42);
+
+            ctx.shadowBlur = 0;
+        }
+
+        function drawBubbles() {
+            bubbles.forEach(bubble => {
+                ctx.beginPath();
+                ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(255, 255, 255, 0.35)";
+                ctx.fill();
+
+                bubble.y -= bubble.speed;
+
+                if (bubble.y < -10) {
+                    bubble.y = canvas.height + 20;
+                    bubble.x = Math.random() * canvas.width;
+                }
+            });
+        }
+
+        function drawHearts() {
+            hearts.forEach(heart => {
+                ctx.font = `${heart.size}px serif`;
+                ctx.fillStyle = "rgba(255, 200, 210, 0.9)";
+                ctx.fillText("❤️", heart.x, heart.y);
+
+                heart.y -= heart.speed;
+                heart.x += heart.drift;
+
+                if (heart.y < -30) {
+                    heart.y = canvas.height + 40;
+                    heart.x = Math.random() * canvas.width;
+                }
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            drawBackground();
+            drawBubbles();
+            drawHearts();
+            drawText();
+
+            textY += 0.25 * direction;
+            if (textY > 185 || textY < 170) direction *= -1;
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+</body>
+
+</html>
