@@ -1,0 +1,33 @@
+# Registration Form
+
+A basic user registration form built using HTML and CSS to demonstrate form handling and input validation.
+
+## 📌 Features
+
+- Text, Email, Password, and Mobile input fields
+- Required field validation
+- Dropdown selection (Gender)
+- Pattern validation for mobile numbers
+- Basic CSS styling
+
+## 🛠 Technologies Used
+
+- HTML5
+- CSS3
+
+## 🚀 How to Run
+
+1. Open the HTML file in any web browser.
+2. Fill out the form fields to test validation.
+
+## 🎯 Purpose
+
+This project was created to practice:
+- HTML form elements
+- Input validation
+- Required attributes
+- Styling form components
+
+## 📄 License
+
+For educational and practice purposes.
