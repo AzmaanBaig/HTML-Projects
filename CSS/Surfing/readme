@@ -1,0 +1,35 @@
+# WaveRiders Surf Academy
+
+A responsive multi-section website layout for a fictional surf academy.
+
+## 📌 Features
+
+- Navigation bar
+- Hero section with background image
+- About section
+- Course cards layout
+- Footer section
+- Flexbox layout usage
+
+## 🛠 Technologies Used
+
+- HTML5
+- CSS3 (Flexbox)
+
+## 🚀 How to Run
+
+1. Open the HTML file in a browser.
+2. Resize the window to test layout behavior.
+
+## 🎯 Purpose
+
+This project was created to practice:
+- Multi-section layout design
+- Flexbox positioning
+- Background images
+- Card-based UI structure
+- Website structuring
+
+## 📄 License
+
+For educational and practice purposes.
