@@ -1,0 +1,59 @@
+Photography – Luxury Portfolio Website
+
+A modern dark-themed photography portfolio website designed using HTML and CSS.
+
+📌 Features
+
+Dark luxury UI design
+
+Gold accent styling
+
+Fixed glass-effect header
+
+Fullscreen hero section
+
+Portfolio grid layout
+
+Service cards with hover effects
+
+Styled contact form
+
+Responsive design
+
+🛠 Technologies Used
+
+HTML5
+
+CSS3
+
+Flexbox
+
+CSS Grid
+
+Google Fonts
+
+🚀 How to Run
+
+Download or clone the repository.
+
+Open index.html in any web browser.
+
+Ensure photography.css is in the same folder.
+
+🎯 Purpose
+
+This project was created to practice:
+
+Dark theme portfolio design
+
+Layout structuring using Flexbox & Grid
+
+Responsive web design
+
+UI spacing and typography balance
+
+Hover effects and transitions
+
+📄 License
+
+For educational and personal portfolio use.
